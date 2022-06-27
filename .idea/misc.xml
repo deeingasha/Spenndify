@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/about.xml" value="0.231" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/activestepsbackground.xml" value="0.2275" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/continue_btn.xml" value="0.2105" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/get_started_btn.xml" value="0.2275" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/inactive_pin_bg.xml" value="0.2275" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/inactive_pinview_bg.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/layer_2.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/login_button.xml" value="0.231" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/tab_indicator_default.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/welcome_lines.xml" value="0.1145" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/welcome_lines2.xml" value="0.23" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/acc_creation.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/acc_lookup.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/check_account.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/confirmpin.xml" value="0.33" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/create_acc.xml" value="0.19927536231884058" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/create_pin_frag.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/create_pin_layout.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/list_security_questions_layout.xml" value="0.21" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/login_frag.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/login_pin_frag.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/login_welcome.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/onboarding_frag.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/onboarding_layout.xml" value="0.12" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/practice_layout.xml" value="0.5" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/security_questions.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/splash_activity.xml" value="0.5" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/splash_frag.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/splash_frag1.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/user_detail.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/verify_acc.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/welcome_page.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

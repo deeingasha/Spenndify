@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/onboardingFrag">
+
+    <fragment
+        android:id="@+id/onboardingFrag"
+        android:name="com.example.spenndify.onboarding.OnboardingFrag"
+        android:label="OnboardingFrag" >
+        <action
+            android:id="@+id/action_onboardingFrag_to_createAccountFragment"
+            app:destination="@id/createAccountFragment" />
+        <action
+            android:id="@+id/action_onboardingFrag_to_accLookup"
+            app:destination="@id/accLookup" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAccountFragment"
+        android:name="com.example.spenndify.createaccount.CreateAccountFragment"
+        android:label="CreateAccountFragment" >
+        <action
+            android:id="@+id/action_createAccountFragment_to_securityQuestionFragment"
+            app:destination="@id/securityQuestionFragment" />
+        <action
+            android:id="@+id/action_createAccountFragment_to_onboardingFrag"
+            app:destination="@id/onboardingFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/securityQuestionFragment"
+        android:name="com.example.spenndify.createaccount.SecurityQuestionFragment"
+        android:label="SecurityQuestionFragment" >
+        <action
+            android:id="@+id/action_securityQuestionFragment_to_createAccountFragment"
+            app:destination="@id/createAccountFragment" />
+        <action
+            android:id="@+id/action_securityQuestionFragment_to_createPinFragment"
+            app:destination="@id/createPinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/accLookup"
+        android:name="com.example.spenndify.login.AccLookup"
+        android:label="AccLookup" >
+        <action
+            android:id="@+id/action_accLookup_to_onboardingFrag"
+            app:destination="@id/onboardingFrag" />
+        <action
+            android:id="@+id/action_accLookup_to_loginWelcomeFragment"
+            app:destination="@id/loginWelcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createPinFragment"
+        android:name="com.example.spenndify.createaccount.CreatePinFragment"
+        android:label="CreatePinFragment" >
+        <action
+            android:id="@+id/action_createPinFragment_to_loginWelcomeFragment"
+            app:destination="@id/loginWelcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginWelcomeFragment"
+        android:name="com.example.spenndify.login.LoginWelcomeFragment"
+        android:label="LoginWelcomeFragment" />
+</navigation>

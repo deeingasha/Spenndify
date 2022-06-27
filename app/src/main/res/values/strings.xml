@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Spenndify</string>
+    <string name="login">Login</string>
+    <string name="get_started">GET STARTED</string>
+    <string name="spenndify_white_logo">Spenndify white logo</string>
+    <string name="help">Help</string>
+    <string name="good_morning_steve_your_growth_your_future">Good Morning Steve, your growth your future</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="about_us">About us</string>
+    <string name="profile_icon">Profile Icon</string>
+    <string name="making_sure_your_connection_is_secure">Making sure your connection is secure</string>
+    <string name="cancel_button">Cancel Button</string>
+    <string name="spenndify_blue_logo">Spenndify blue logo</string>
+    <string name="verifying_your_account">Verifying your Account</string>
+    <string name="hey_there_we_love_new_ncustomers_let_s_get_to_know_you">Hey there! We love new\nCustomers let\'s get to know you</string>
+    <string name="go_back">Go Back</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="id_number">ID Number</string>
+    <string name="email_address">Email address</string>
+    <string name="please_fill_in_the_following_details">Please fill in the following details</string>
+    <string name="welcome_to_spendify">Welcome to Spendify</string>
+    <string name="manage_your_finances_with_ease_from_none_place">Manage your finances with ease from\nOne place</string>
+</resources>

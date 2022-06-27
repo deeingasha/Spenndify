@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/wel_img"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/group_1">
+
+   <Button
+       android:id="@+id/login_btn"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="16dp"
+       android:layout_marginTop="28dp"
+       android:background="@android:color/transparent"
+       android:fontFamily="@font/nunito_sans_extrabold"
+       android:paddingLeft="0dp"
+       android:paddingRight="0dp"
+       android:text="@string/login"
+       android:textAlignment="viewStart"
+       android:textAllCaps="false"
+       android:textColor="#FFFFFF"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <ImageView
+       android:id="@+id/Logo2"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginTop="219dp"
+       android:contentDescription="@string/spenndify_white_logo"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:srcCompat="@drawable/spenndify_white_logo" />
+
+   <androidx.viewpager2.widget.ViewPager2
+       android:id="@+id/ViewPager"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       app:layout_constraintBottom_toTopOf="@+id/Scroll_ind"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <LinearLayout
+       android:id="@+id/Scroll_ind"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginBottom="16dp"
+       android:orientation="horizontal"
+       app:layout_constraintBottom_toTopOf="@+id/GetStarted_btn"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"></LinearLayout>
+
+   <Button
+       android:id="@+id/GetStarted_btn"
+       android:layout_width="0dp"
+       android:layout_height="wrap_content"
+       android:layout_marginStart="16dp"
+       android:layout_marginEnd="16dp"
+       android:layout_marginBottom="85dp"
+       android:background="@drawable/get_started_btn"
+       android:fontFamily="@font/nunito_sans_extrabold"
+       android:text="@string/get_started"
+       app:cornerRadius="23dp"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:strokeColor="#FFFFFF"
+       app:strokeWidth="1px" />
+
+   <ImageView
+       android:id="@+id/imageView5"
+       android:layout_width="0dp"
+       android:layout_height="84dp"
+       android:contentDescription="TODO"
+       android:scaleType="centerCrop"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:srcCompat="@drawable/decb7b87639d4e005561d2498e87b78f" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
