@@ -25,17 +25,25 @@
         <action
             android:id="@+id/action_createAccountFragment_to_onboardingFrag"
             app:destination="@id/onboardingFrag" />
+
     </fragment>
     <fragment
         android:id="@+id/securityQuestionFragment"
         android:name="com.example.spenndify.createaccount.SecurityQuestionFragment"
         android:label="SecurityQuestionFragment" >
         <action
-            android:id="@+id/action_securityQuestionFragment_to_createAccountFragment"
-            app:destination="@id/createAccountFragment" />
-        <action
             android:id="@+id/action_securityQuestionFragment_to_createPinFragment"
             app:destination="@id/createPinFragment" />
+        <argument
+            android:name="fname"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="lname"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
     <fragment
         android:id="@+id/accLookup"
@@ -51,10 +59,22 @@
     <fragment
         android:id="@+id/createPinFragment"
         android:name="com.example.spenndify.createaccount.CreatePinFragment"
-        android:label="CreatePinFragment" >
+        android:label="CreatePinFragment"
+        >
         <action
-            android:id="@+id/action_createPinFragment_to_loginWelcomeFragment"
-            app:destination="@id/loginWelcomeFragment" />
+            android:id="@+id/action_createPinFragment_pop_including_onboardingFrag"
+            app:popUpTo="@id/onboardingFrag"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="fname"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="lname"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
     <fragment
         android:id="@+id/loginWelcomeFragment"

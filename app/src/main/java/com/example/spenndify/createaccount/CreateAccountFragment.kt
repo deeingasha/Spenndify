@@ -51,7 +51,7 @@ class CreateAccountFragment: Fragment() {
            }
            else {
                val action =
-                   CreateAccountFragmentDirections.actionCreateAccountFragmentToSecurityQuestionFragment()
+                   CreateAccountFragmentDirections.actionCreateAccountFragmentToSecurityQuestionFragment(firstName,lastName)
                findNavController().navigate(action)
            }
 
