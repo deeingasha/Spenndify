@@ -70,4 +70,7 @@ dependencies {
     //coroutines
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
+
+    //country code picker
+    implementation 'com.hbb20:ccp:2.5.4'
 }

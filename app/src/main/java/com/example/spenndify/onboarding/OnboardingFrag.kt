@@ -1,6 +1,5 @@
 package com.example.spenndify.onboarding
 
-import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -56,7 +55,7 @@ class OnboardingFrag: Fragment() {
             listOf(
                 OnboardingItemModel(
                     onboardingImage = R.drawable.group_1,
-                    onboardingText1 = "Welcome to Spendify",
+                    onboardingText1 = "Welcome to Spenndify",
                     onboardingText2 = "Manage your finances with ease from\n" +
                             "One place"
                  ),

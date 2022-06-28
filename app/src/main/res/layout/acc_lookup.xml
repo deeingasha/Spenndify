@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -24,7 +23,7 @@
         android:layout_marginTop="21dp"
         android:layout_marginEnd="78dp"
         android:fontFamily="@font/nunito_sans_bold"
-        android:text="Let’s check whether you Have an account"
+        android:text="@string/let_s_check_whether_you_have_an_account"
         android:textColor="#03045E"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,36 +38,11 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:background="@null"
+        android:contentDescription="@string/cancel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/mask_group_1" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-        hint="Phone Number"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Phone Number"
-        app:hintAnimationEnabled="true"
-        app:hintEnabled="true"
-        app:hintTextColor="#525252"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/phone_no"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:cursorVisible="true"
-            android:hint="Eg. 712345678"
-            android:inputType="number"
-            android:singleLine="true" />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/lookup_continue_btn"
@@ -82,6 +56,62 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Phone Number"
+        app:boxStrokeColor="#707070"
+        app:hintAnimationEnabled="true"
+        app:hintEnabled="false"
+        app:hintTextColor="#525252"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/cpp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                app:ccp_autoDetectCountry="true"
+                app:ccp_showNameCode="true"
+                app:ccp_textSize="14sp" />
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone_no"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:cursorVisible="true"
+                android:hint="Eg. 712345678"
+                android:inputType="number"
+                android:maxLength="9"
+                android:singleLine="true"
+                android:textColorHighlight="#525252"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

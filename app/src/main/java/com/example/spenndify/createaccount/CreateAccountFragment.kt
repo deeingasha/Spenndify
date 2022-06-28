@@ -28,10 +28,10 @@ class CreateAccountFragment: Fragment() {
 
         binding.continueCaBtn.setOnClickListener {
 
-            var firstName = (binding.fName.text).toString()
-            var lastName = binding.lName.text.toString()
-            var idNo = binding.idNo.text.toString()
-            var email = binding.email.text.toString()
+            val firstName = (binding.fName.text).toString()
+            val lastName = binding.lName.text.toString()
+            val idNo = binding.idNo.text.toString()
+            val email = binding.email.text.toString()
 
            if (firstName.length == 0){
                binding.fnameInputLayout.isErrorEnabled = true
