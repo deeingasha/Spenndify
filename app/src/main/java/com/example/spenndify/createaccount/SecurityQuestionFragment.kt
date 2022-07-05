@@ -88,26 +88,26 @@ class SecurityQuestionFragment:Fragment() {
     }
 
     private fun validateForm():Boolean{
-        if(binding.a1.text.isNullOrEmpty()){
-            binding.a1.visibility = View.VISIBLE
-            binding.textInputLayouta1.isErrorEnabled = true
-            binding.textInputLayouta1.error =getString(R.string.please_input_answer)
-            return false
-        }
-        if(binding.a2.text.isNullOrEmpty()){
-            binding.a2.visibility = View.VISIBLE
-            binding.textInputLayouta2.isErrorEnabled = true
-            binding.textInputLayouta2.error = getString(R.string.please_input_answer)
-            return false
-        }
-        if(binding.a3.text.isNullOrEmpty()){
-            binding.a3.visibility = View.VISIBLE
-            binding.textInputLayouta3.isErrorEnabled = true
-            binding.textInputLayouta3.error = getString(R.string.please_input_answer)
-            return false
+        when {
+            binding.a1.text.isNullOrEmpty() -> {
+                binding.a1.visibility = View.VISIBLE
+                binding.textInputLayouta1.isErrorEnabled = true
+                binding.textInputLayouta1.error =getString(R.string.please_input_answer)
+                return false
+            }
+            binding.textInputLayouta2.visibility==View.VISIBLE && binding.a2.text.isNullOrEmpty() -> {
+                binding.textInputLayouta2.isErrorEnabled = true
+                binding.textInputLayouta2.error = getString(R.string.please_input_answer)
+                return false
+            }
+            binding.textInputLayouta3.visibility==View.VISIBLE && binding.a3.text.isNullOrEmpty() -> {
+                binding.textInputLayouta3.isErrorEnabled = true
+                binding.textInputLayouta3.error = getString(R.string.please_input_answer)
+                return false
+            }
+            else -> return true
         }
 
-        return true
     }
 
     private fun hideErrorMessage(){
