@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sq_ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -71,11 +72,12 @@
 
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="What is your passion?" />
+            android:text="What is your passion?"
+            android:inputType="none"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
+        android:id="@+id/textInputLayouta1"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -88,6 +90,7 @@
         app:layout_constraintTop_toBottomOf="@+id/l_q1">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/a1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Give your answer here"
@@ -110,14 +113,41 @@
         app:hintEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayouta1">
 
         <AutoCompleteTextView
             android:id="@+id/q2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="none" />
         <!--android:hint="Eg. What is your passion?"-->
 
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayouta2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        app:boxStrokeColor="#666666"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/l_q2">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/a2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Give your answer here"
+            android:singleLine="true"
+            android:textColor="#59B2B9"
+            android:textColorHint="#59B2B9"
+            android:textStyle="italic"
+            android:visibility="visible" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -133,13 +163,39 @@
         app:hintEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/l_q2">
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayouta2">
 
         <AutoCompleteTextView
             android:id="@+id/q3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:inputType="none" />
         <!--android:hint="Eg. What is your passion?" -->
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayouta3"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="gone"
+        app:boxStrokeColor="#666666"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/l_q3">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/a3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Give your answer here"
+            android:singleLine="true"
+            android:textColor="#59B2B9"
+            android:textColorHint="#59B2B9"
+            android:textStyle="italic" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

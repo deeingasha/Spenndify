@@ -14,7 +14,7 @@ import android.widget.TextView
 object VerifyPopup {
 
     private lateinit var dialogBuilder: AlertDialog.Builder
-    private lateinit var dialog: AlertDialog
+    lateinit var dialog: AlertDialog
     private lateinit var numberText: TextView
 
     lateinit var timeCountdown: CountDownTimer

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/onboardingFrag">
 
     <fragment
         android:id="@+id/onboardingFrag"
         android:name="com.example.spenndify.onboarding.OnboardingFrag"
-        android:label="OnboardingFrag" >
+        android:label="OnboardingFrag"
+        tools:layout="@layout/onboarding_frag">
         <action
             android:id="@+id/action_onboardingFrag_to_createAccountFragment"
             app:destination="@id/createAccountFragment" />
@@ -18,7 +20,8 @@
     <fragment
         android:id="@+id/createAccountFragment"
         android:name="com.example.spenndify.createaccount.CreateAccountFragment"
-        android:label="CreateAccountFragment" >
+        android:label="CreateAccountFragment"
+        tools:layout="@layout/acc_creation">
         <action
             android:id="@+id/action_createAccountFragment_to_securityQuestionFragment"
             app:destination="@id/securityQuestionFragment" />
@@ -30,7 +33,8 @@
     <fragment
         android:id="@+id/securityQuestionFragment"
         android:name="com.example.spenndify.createaccount.SecurityQuestionFragment"
-        android:label="SecurityQuestionFragment" >
+        android:label="SecurityQuestionFragment"
+        tools:layout="@layout/security_questions">
         <action
             android:id="@+id/action_securityQuestionFragment_to_createPinFragment"
             app:destination="@id/createPinFragment" />
@@ -48,7 +52,8 @@
     <fragment
         android:id="@+id/accLookup"
         android:name="com.example.spenndify.login.AccLookup"
-        android:label="AccLookup" >
+        android:label="AccLookup"
+        tools:layout="@layout/acc_lookup">
         <action
             android:id="@+id/action_accLookup_to_onboardingFrag"
             app:destination="@id/onboardingFrag" />
@@ -60,7 +65,7 @@
         android:id="@+id/createPinFragment"
         android:name="com.example.spenndify.createaccount.CreatePinFragment"
         android:label="CreatePinFragment"
-        >
+        tools:layout="@layout/create_pin_frag" >
         <action
             android:id="@+id/action_createPinFragment_pop_including_onboardingFrag"
             app:popUpTo="@id/onboardingFrag"
@@ -79,5 +84,6 @@
     <fragment
         android:id="@+id/loginWelcomeFragment"
         android:name="com.example.spenndify.login.LoginWelcomeFragment"
-        android:label="LoginWelcomeFragment" />
+        android:label="LoginWelcomeFragment"
+        tools:layout="@layout/login_welcome"/>
 </navigation>
