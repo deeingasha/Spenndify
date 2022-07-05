@@ -45,7 +45,7 @@ class CreatePinFragment:Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val userName = args.fname+args.lname
+        val userName = args.fname+""+ args.lname
         binding.usernameTxt.text = userName
     }
 

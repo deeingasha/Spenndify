@@ -9,7 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import com.example.spenndify.R
+import com.example.spenndify.createaccount.CreatePinFragmentArgs
 import com.example.spenndify.databinding.LoginPinFragBinding
 
 class LoginPinFragment : Fragment() {
@@ -21,11 +23,10 @@ class LoginPinFragment : Fragment() {
     private var two2: String? = null
     private var three3: String? = null
     private var four4: String? = null
-    private var isComplete = false
     private var isDone = false
 
     private  var confirmPin:String? = null
-
+    private var isComplete = false
 
     override fun onCreateView(
         inflater: LayoutInflater,

@@ -91,7 +91,7 @@ class SecurityQuestionFragment:Fragment() {
         if(binding.a1.text.isNullOrEmpty()){
             binding.a1.visibility = View.VISIBLE
             binding.textInputLayouta1.isErrorEnabled = true
-            binding.textInputLayouta1.error = getString(R.string.please_input_answer)
+            binding.textInputLayouta1.error =getString(R.string.please_input_answer)
             return false
         }
         if(binding.a2.text.isNullOrEmpty()){
