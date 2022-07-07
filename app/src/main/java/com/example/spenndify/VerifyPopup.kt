@@ -15,7 +15,7 @@ object VerifyPopup {
 
     private lateinit var dialogBuilder: AlertDialog.Builder
     lateinit var dialog: AlertDialog
-    private lateinit var numberText: TextView
+    lateinit var numberText: TextView
 
     lateinit var timeCountdown: CountDownTimer
 

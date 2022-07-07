@@ -29,6 +29,10 @@ class AccLookup: Fragment() {
         binding.lookupContinueBtn.setOnClickListener {
             val popup = VerifyPopup
             popup.createVerifyPopup(context)
+            val phoneNumber = binding.phoneNo.text.toString()
+            var phoneStart =phoneNumber?.subSequence(0,4)
+            var phoneEnd = phoneNumber?.subSequence(7,9)
+            popup.numberText.text = "We’ve sent a verification code to +254${phoneStart}***${phoneEnd}" //TODO figure out sth better
             popup.timeCountdown.start()
         }
 

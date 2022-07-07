@@ -1,6 +1,7 @@
 package com.example.spenndify.createaccount
 
 import android.os.Bundle
+import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,12 +12,6 @@ import com.example.spenndify.databinding.AccCreationBinding
 
 class CreateAccountFragment: Fragment() {
     private lateinit var binding: AccCreationBinding
-
-   /** val firstName = (binding.fName.text).toString()
-    val lastName = binding.lName.text.toString()
-    val idNo = binding.idNo.text.toString()
-    val email = binding.email.text.toString()*/
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,12 +25,23 @@ class CreateAccountFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-
         binding.continueCaBtn.setOnClickListener {
-           // validateForm()
+           /**if (validateForm()){
+               hideErrorMessage()
             val action =
-                CreateAccountFragmentDirections.actionCreateAccountFragmentToSecurityQuestionFragment(fname = "", lname = "")
+                CreateAccountFragmentDirections.actionCreateAccountFragmentToSecurityQuestionFragment(
+                    binding.fName.text.toString(),
+                    binding.lName.text.toString(),
+                    binding.phoneNo.text.toString())
+                findNavController().navigate(action)
+            }*/
+            //TODO() uncomment validation
+
+            val action =
+                CreateAccountFragmentDirections.actionCreateAccountFragmentToSecurityQuestionFragment(
+                    binding.fName.text.toString(),
+                    binding.lName.text.toString(),
+                    binding.phoneNo.text.toString())
             findNavController().navigate(action)
         }
 
@@ -45,30 +51,68 @@ class CreateAccountFragment: Fragment() {
         }
 
     }
-  /**  fun validateForm(){
+    private fun validateForm():Boolean{
+        val firstName = (binding.fName.text).toString()
+        val lastName = binding.lName.text.toString()
+        val idNo = binding.idNo.text.toString()
+        val email = binding.email.text.toString()
+        val phoneNo = binding.phoneNo.text.toString()
 
-        if (firstName.length == 0){
-            binding.fnameInputLayout.isErrorEnabled = true
-            binding.fnameInputLayout.error = "Please input first name"
-        }else if (lastName.length == 0){
-            binding.lnameInputLayout.isErrorEnabled = true
-            binding.lnameInputLayout.error = "Please input last name"
-        }else if (idNo.length == 0){
-            binding.idnoInputLayout.isErrorEnabled = true
-            binding.idnoInputLayout.error = "Please input ID number"
-        }else if (idNo.length <8){
-            binding.idnoInputLayout.isErrorEnabled = true
-            binding.idnoInputLayout.error = "ID number should be 8 characters"
-        }else if (email.length == 0){
-            binding.emailInputLayout.isErrorEnabled = true
-            binding.emailInputLayout.error= "Please input email address"
-        }else if(email.length > 0){
+        binding.apply {
+            when {
+                firstName.isEmpty() -> {
+                    fnameInputLayout.isErrorEnabled = true
+                    fnameInputLayout.error = "Please input first name"
+                    return false
+                }
+                lastName.isEmpty() -> {
+                    lnameInputLayout.isErrorEnabled = true
+                    lnameInputLayout.error = "Please input last name"
+                    return false
+                }
+                idNo.isEmpty() -> {
+                    idnoInputLayout.isErrorEnabled = true
+                    idnoInputLayout.error = "Please input ID number"
+                    return false
+                }
+                idNo.length <7 -> {
+                    idnoInputLayout.isErrorEnabled = true
+                    idnoInputLayout.error = "ID number should be at least 7 characters"
+                    return false
+                }
+                email.isEmpty() -> {
+                    emailInputLayout.isErrorEnabled = true
+                    emailInputLayout.error= "Please input email address"
+                    return false
+                }
+                !Patterns.EMAIL_ADDRESS.matcher(email).matches() -> {
+                    emailInputLayout.isErrorEnabled = true
+                    emailInputLayout.error= "Please input a valid email address"
+                    return false
+                }
+                phoneNo.isEmpty() -> {
+                    phoneNoLayout.isErrorEnabled = true
+                    phoneNoLayout.error = "Please input phone number"
+                    return false
+                }
+                phoneNo.length<9 -> {
+                    phoneNoLayout.isErrorEnabled = true
+                    phoneNoLayout.error = "Phone number should be 9 numbers"
+                    return false
+                }
+                //TODO figure this out still proceeds despite error
+                else -> return true
+            }
+        }
+    }
 
+    private fun hideErrorMessage(){
+        binding.apply {
+            fnameInputLayout.isErrorEnabled = false
+            lnameInputLayout.isErrorEnabled = false
+            idnoInputLayout.isErrorEnabled = false
+            emailInputLayout.isErrorEnabled = false
+            phoneNoLayout.isErrorEnabled = false
         }
-        else {
-            val action =
-                CreateAccountFragmentDirections.actionCreateAccountFragmentToSecurityQuestionFragment(firstName,lastName)
-            findNavController().navigate(action)
-        }
-    }*/
+    }
 }

@@ -45,7 +45,7 @@ class CreatePinFragment:Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val userName = args.fname+""+ args.lname
+        val userName = args.fname+" "+args.lname
         binding.usernameTxt.text = userName
     }
 
@@ -147,9 +147,9 @@ class CreatePinFragment:Fragment() {
 
         binding.apply {
 
-            if (mConfirmPin != null && mConfirmPin!!.length > 0) {
+            if (mConfirmPin.isNotEmpty()) {
 
-                mConfirmPin = mConfirmPin!!.substring(0, mConfirmPin!!.length - 1)
+                mConfirmPin = mConfirmPin.substring(0, mConfirmPin!!.length - 1)
             }
             if (four4 != null) {
 
