@@ -92,7 +92,7 @@
             android:id="@+id/a1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Give your answer here"
+            android:hint="@string/give_your_answer_here"
             android:singleLine="true"
             android:textColor="#59B2B9"
             android:textColorHint="#59B2B9"

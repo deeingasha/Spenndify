@@ -23,4 +23,21 @@
     <string name="manage_your_finances_with_ease_from_none_place">Manage your finances with ease from\nOne place</string>
     <string name="let_s_check_whether_you_have_an_account">Let’s check whether you Have an account</string>
     <string name="please_input_answer">Please input answer</string>
+    <string name="give_your_answer_here">Give your answer here</string>
+    <string name="_0">0</string>
+    <string name="_9">9</string>
+    <string name="_8">8</string>
+    <string name="_7">7</string>
+    <string name="_6">6</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_1">1</string>
+    <string name="forgot_pin">Forgot pin?</string>
+    <string name="select_category">Select Category</string>
+    <string name="sms_permission">We need you to allow Spenndify to read and upload select transaction message logs from your mobile device, you will access well formatted and organised important financial transaction informations and related analysis.\n \nWith your permission, we will only read transactions notification messages originating from Mpesa and any bank within Kenya. \n \nUpon your consent copies of your messages also serve as secondary back-up and would still be available if you changed your device and re-authenticated your account details on a new device with a new installation of the app. \n \nYou may choose to delete such messages from our servers yourself, through the app at any time, or send us a request to delete such information using the contact details provided in our data privacy policy.\n \nWe will not share or disclose your financial transactions message logs to third parties without your consent or for any purposes outlined in this privacy policy and/ our terms and conditions. \nPlease read full Data privacy policy</string>
+    <string name="read_sms_permission">Read SMS permission</string>
+    <string name="financial_transaction_message_logs">Financial transaction message logs(SMS)</string>
+    <string name="sms_consent">I consent to giving spenndify permission to read my mesa and bank messages</string>
 </resources>

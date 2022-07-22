@@ -1,23 +1,24 @@
-package com.example.spenndify.login
+package com.example.spenndify.createaccount
 
 import android.annotation.SuppressLint
-import android.content.SharedPreferences
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.spenndify.R
-import com.example.spenndify.createaccount.CreatePinFragmentArgs
-import com.example.spenndify.databinding.LoginPinFragBinding
+import com.example.spenndify.SharedPreferenceManager
+import com.example.spenndify.databinding.CreatePinFragBinding
 
-class LoginPinFragment : Fragment() {
-    private lateinit var binding: LoginPinFragBinding
-
-    private var pin = ""
+class LoginPinFragment:Fragment() {
+    private lateinit var binding: CreatePinFragBinding
+    private  val args: CreatePinFragmentArgs by navArgs()
 
     private var one1: String? = null
     private var two2: String? = null
@@ -25,7 +26,7 @@ class LoginPinFragment : Fragment() {
     private var four4: String? = null
     private var isDone = false
 
-    private  var confirmPin:String? = null
+    private  var mConfirmPin= ""
     private var isComplete = false
 
     override fun onCreateView(
@@ -33,30 +34,69 @@ class LoginPinFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = LoginPinFragBinding.inflate(inflater,container, false)
-        initUI()
-        return  binding.root
+        binding = CreatePinFragBinding.inflate(inflater,container,false)
+        changeToConfirmPinLayout()
+        confirmUI()
+        return binding.root
     }
 
-    private fun initUI(){
-        binding.createPinTxt.text ="Create a new 4 digit Pin"
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //TODO change name
+        val userName = args.fname+" "+args.lname
+        binding.usernameTxt.text = userName
+
+        binding.forgotpinBtn.setOnClickListener {
+            val action = LoginPinFragmentDirections.actionLoginPinFragmentToForgotPinFragment()
+            findNavController().navigate(action)
+        }
+        binding.pinBackBtn.setOnClickListener {
+            findNavController().navigateUp()
+        }
+
+    }
+
+    private fun  changeToConfirmPinLayout(){
+        binding.createPinTxt.text="Enter Pin"
+        binding.forgotpinBtn.visibility = View.VISIBLE
+        resetPin()
+    }
+
+    private fun verifyPin(confirmPin:String?){
+
+        //TODO compare with pin in backend instead
+        val shared = context?.getSharedPreferences("PinSharedPref",Context.MODE_PRIVATE)
+        val  initialPin = shared?.getString("initial_pin","")
+
+        if (initialPin == confirmPin){
+            //TODO navigate to next
+            binding.createPinTxt.text = "Match!!"
+            val action = LoginPinFragmentDirections.actionLoginPinFragmentToDashboardFragment()
+            findNavController().navigate(action)
+        }else{
+            binding.createPinTxt.text = "No Match!!"
+        }
+    }
+
+    private fun confirmUI() {
 
         binding.apply {
-            binding.btnOne.setOnClickListener { controlPinPad2("1") }
-            binding.btnTwo.setOnClickListener { controlPinPad2("2") }
-            binding.btnThree.setOnClickListener { controlPinPad2("3") }
-            binding.btnFour.setOnClickListener { controlPinPad2("4") }
-            binding.btnFive.setOnClickListener { controlPinPad2("5") }
-            binding.btnSix.setOnClickListener { controlPinPad2("6") }
-            binding.btnSeven.setOnClickListener { controlPinPad2("7") }
-            binding.btnEight.setOnClickListener { controlPinPad2("8") }
-            binding.btnNine.setOnClickListener { controlPinPad2("9") }
-            binding.btnZero.setOnClickListener { controlPinPad2("0") }
+            binding.btnOne.setOnClickListener { controlPinPad1("1") }
+            binding.btnTwo.setOnClickListener { controlPinPad1("2") }
+            binding.btnThree.setOnClickListener { controlPinPad1("3") }
+            binding.btnFour.setOnClickListener { controlPinPad1("4") }
+            binding.btnFive.setOnClickListener { controlPinPad1("5") }
+            binding.btnSix.setOnClickListener { controlPinPad1("6") }
+            binding.btnSeven.setOnClickListener { controlPinPad1("7") }
+            binding.btnEight.setOnClickListener { controlPinPad1("8") }
+            binding.btnNine.setOnClickListener { controlPinPad1("9") }
+            binding.btnZero.setOnClickListener { controlPinPad1("0") }
             binding.btnDelete.setOnClickListener { deletePinEntry() }
         }
     }
 
-    private fun controlPinPad2(entry: String) {
+
+    private fun controlPinPad1(entry: String) {
         binding.apply {
             when {
                 one1 == null -> {
@@ -94,79 +134,68 @@ class LoginPinFragment : Fragment() {
                         )
                     }
                     four4 = entry
-                    isDone = true
+                    isComplete = true
                 }
             }
 
-            if (isDone) {
+            if(isComplete) {
 
-                pin = one1 + two2 + three3 + four4
+                mConfirmPin = one1 + two2 + three3 + four4
+                Log.i("pin_con", mConfirmPin)
 
-                //verifyPin
-                //verifyPin(pin)
+                verifyPin(mConfirmPin)
 
-                //saveInitialPinEntered(pin)
-                Log.i("pin_login", pin)
             }
-
         }
     }
-  private fun saveInitialPinEntered(initialPin: String) {
-        //SharedPreferences.
-  }
 
     @SuppressLint("UseCompatLoadingForDrawables")
     private fun deletePinEntry() {
 
         binding.apply {
 
-            if (confirmPin != null && confirmPin!!.length > 0) {
+            if (mConfirmPin.isNotEmpty()) {
 
-                confirmPin = confirmPin!!.substring(0, confirmPin!!.length - 1)
+                mConfirmPin = mConfirmPin.substring(0, mConfirmPin!!.length - 1)
             }
-                if (four4 != null) {
+            if (four4 != null) {
 
-                    binding.pin4.background = resources.getDrawable(R.drawable.inactive_pin_bg)
-                    four4 = null
-                    isDone = false
-                }
-                else if (three3 != null) {
+                binding.pin4.background = resources.getDrawable(R.drawable.inactive_pin_bg)
+                four4 = null
+                isDone = false
+            }
+            else if (three3 != null) {
 
-                    binding.pin3.background = resources.getDrawable(R.drawable.inactive_pin_bg)
-                    three3 = null
-                }else if (two2 != null) {
+                binding.pin3.background = resources.getDrawable(R.drawable.inactive_pin_bg)
+                three3 = null
+            }else if (two2 != null) {
 
-                    binding.pin2.background = resources.getDrawable(R.drawable.inactive_pin_bg)
-                    two2 = null
-                }else{
+                binding.pin2.background = resources.getDrawable(R.drawable.inactive_pin_bg)
+                two2 = null
+            }else{
 
-                    binding.pin1.background = resources.getDrawable(R.drawable.inactive_pin_bg)
-                    one1 = null
-                }
+                binding.pin1.background = resources.getDrawable(R.drawable.inactive_pin_bg)
+                one1 = null
+            }
 
         }
 
     }
-      /**  fun resetPin() {
+
+    private fun resetPin() {
         one1 = null
-        isDone = false
         two2 = null
         three3 = null
         four4 = null
-        confirmPin = null
 
+
+        isDone = false
 
         binding.pin4.background = resources.getDrawable(R.drawable.inactive_pin_bg)
         binding.pin3.background = resources.getDrawable(R.drawable.inactive_pin_bg)
         binding.pin2.background = resources.getDrawable(R.drawable.inactive_pin_bg)
         binding.pin1.background = resources.getDrawable(R.drawable.inactive_pin_bg)
 
-        binding.pin1.visibility = View.VISIBLE
-        binding.pin2.visibility = View.VISIBLE
-        binding.pin3.visibility = View.VISIBLE
-        binding.pin4.visibility = View.VISIBLE
 
-   }*/
+    }
 }
-//TODO deal with pin confirmation
-

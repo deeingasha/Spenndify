@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.spenndify.databinding.LoginWelcomeBinding
 
 class LoginWelcomeFragment:Fragment() {
@@ -19,4 +21,12 @@ class LoginWelcomeFragment:Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.login2Btn.setOnClickListener{
+            val action = LoginWelcomeFragmentDirections.actionLoginWelcomeFragmentToLoginPinFragment()
+            findNavController().navigate(action)
+        }
+    }
 }

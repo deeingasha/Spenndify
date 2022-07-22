@@ -47,6 +47,10 @@ class CreatePinFragment:Fragment() {
 
         val userName = args.fname+" "+args.lname
         binding.usernameTxt.text = userName
+
+        binding.pinBackBtn.setOnClickListener {
+            findNavController().navigateUp()
+        }
     }
 
     private fun initUI(){
@@ -136,6 +140,8 @@ class CreatePinFragment:Fragment() {
 
         if (initialPin == confirmPin){
             binding.createPinTxt.text = "Match!!"
+            val action = CreatePinFragmentDirections.actionCreatePinFragmentToLoginWelcomeFragment()
+            findNavController().navigate(action)
             //TODO navigate to welcome page
         }else{
             binding.createPinTxt.text = "No Match!!"

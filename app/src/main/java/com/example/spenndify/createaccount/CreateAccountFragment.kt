@@ -26,7 +26,7 @@ class CreateAccountFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.continueCaBtn.setOnClickListener {
-           /**if (validateForm()){
+           if (validateForm()){
                hideErrorMessage()
             val action =
                 CreateAccountFragmentDirections.actionCreateAccountFragmentToSecurityQuestionFragment(
@@ -34,15 +34,15 @@ class CreateAccountFragment: Fragment() {
                     binding.lName.text.toString(),
                     binding.phoneNo.text.toString())
                 findNavController().navigate(action)
-            }*/
+            }
             //TODO() uncomment validation
 
-            val action =
+            /**val action =
                 CreateAccountFragmentDirections.actionCreateAccountFragmentToSecurityQuestionFragment(
                     binding.fName.text.toString(),
                     binding.lName.text.toString(),
                     binding.phoneNo.text.toString())
-            findNavController().navigate(action)
+            findNavController().navigate(action)*/
         }
 
         binding.backCaBtn.setOnClickListener {
