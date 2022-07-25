@@ -40,4 +40,6 @@
     <string name="read_sms_permission">Read SMS permission</string>
     <string name="financial_transaction_message_logs">Financial transaction message logs(SMS)</string>
     <string name="sms_consent">I consent to giving spenndify permission to read my mesa and bank messages</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

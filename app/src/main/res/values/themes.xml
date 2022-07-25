@@ -37,4 +37,9 @@
         <item name="android:layout_marginTop">0dp</item>
         <item name="android:layout_width">16dp</item>
     </style>
+
+    <style name="rounded_toggle">
+        <item name="cornerRadius">30dp</item>
+    </style>
+
 </resources>

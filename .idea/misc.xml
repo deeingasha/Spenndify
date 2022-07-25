@@ -5,8 +5,15 @@
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/about.xml" value="0.231" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/activestepsbackground.xml" value="0.2275" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/bottom_nav_rounded.xml" value="0.12" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/bottom_nav_selector.xml" value="0.12" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/budget.xml" value="0.12" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/continue_btn.xml" value="0.2105" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/get_started_btn.xml" value="0.2275" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/ic_baseline_history_24.xml" value="0.12" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/ic_outline_history_24.xml" value="0.12" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/ic_outline_home_24.xml" value="0.12" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/ic_outline_pie_chart_24.xml" value="0.12" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/inactive_pin_bg.xml" value="0.2275" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/inactive_pinview_bg.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/layer_2.xml" value="0.1" />
@@ -14,6 +21,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/tab_background.xml" value="0.231" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/tab_indicator_default.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/textinput_border.xml" value="0.1405" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/toggle_btn.xml" value="0.166" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/welcome_lines.xml" value="0.1145" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/drawable/welcome_lines2.xml" value="0.23" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/acc_creation.xml" value="0.22447916666666667" />
@@ -25,9 +33,14 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/create_acc.xml" value="0.19927536231884058" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/create_pin_frag.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/create_pin_layout.xml" value="0.22447916666666667" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/dashboard_frag.xml" value="0.33" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/dashboard_frag.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/dashboard_layout.xml" value="0.20018115942028986" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/enter_amount_layout.xml" value="0.2234375" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/forgot_pin_layout.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/fragment_budget.xml" value="0.20018115942028986" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/fragment_expense.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/fragment_history.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/fragment_home.xml" value="0.20018115942028986" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/list_security_questions_layout.xml" value="0.21" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/login_frag.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/login_pin_frag.xml" value="0.25" />
@@ -47,6 +60,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/verify_acc.xml" value="0.22" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/verify_id.xml" value="0.2234375" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/layout/welcome_page.xml" value="0.25" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/Spenndify/app/src/main/res/menu/menu_items.xml" value="0.2234375" />
       </map>
     </option>
   </component>
