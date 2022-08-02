@@ -31,7 +31,7 @@
             android:textSize="22sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView21"
-            tools:text="KSH 72,000" />
+            android:text="KSH 00,000" />
 
         <ImageButton
             android:id="@+id/imageButton"

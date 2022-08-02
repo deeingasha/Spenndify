@@ -44,7 +44,7 @@
         app:srcCompat="@drawable/group_10831" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/welcome_txt_TV"
         android:layout_width="203dp"
         android:layout_height="97dp"
         android:layout_marginStart="8dp"
@@ -69,7 +69,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.928"
-        app:layout_constraintStart_toEndOf="@+id/textView2" />
+        app:layout_constraintStart_toEndOf="@+id/welcome_txt_TV" />
 
     <Button
         android:id="@+id/help_btn"
@@ -102,17 +102,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/Contact_btn"
         app:layout_constraintStart_toEndOf="@+id/help_btn" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="413dp"
-        android:layout_height="76dp"
-        android:layout_marginBottom="4dp"
-        android:contentDescription="TODO"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/decb7b87639d4e005561d2498e87b78f" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

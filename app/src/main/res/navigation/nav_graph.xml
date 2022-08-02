@@ -102,7 +102,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginPinFragment"
-        android:name="com.example.spenndify.createaccount.LoginPinFragment"
+        android:name="com.example.spenndify.login.LoginPinFragment"
         android:label="LoginPinFragment"
         tools:layout="@layout/create_pin_frag">
         <action

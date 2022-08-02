@@ -55,10 +55,10 @@ class SecurityQuestionFragment:Fragment() {
                     },6000)
 
                popup.createVerifyPopup(context)
-               val phoneNumber = args.phoneNo
-               var phoneStart =phoneNumber?.subSequence(0,4)
-               var phoneEnd = phoneNumber?.subSequence(7,9)
-               popup.numberText.text = "We’ve sent a verification code to +254${phoneStart}***${phoneEnd}"
+//               val phoneNumber = args.phoneNo
+//               var phoneStart =phoneNumber?.subSequence(0,4)
+//               var phoneEnd = phoneNumber?.subSequence(7,9)
+//               popup.numberText.text = "We’ve sent a verification code to +254${phoneStart}***${phoneEnd}"
                popup.timeCountdown.start()
                 //TODO fix the phone number part
            //TODO uncomment validation
@@ -76,10 +76,8 @@ class SecurityQuestionFragment:Fragment() {
             lQ1.requestFocus()
             val items = listOf(
                 "What is your passion?",
-                "What is your favorite food?",
+                "What is your pet's name??",
                 "What is your favorite color?",
-                "Name of pet Pet?",
-                "Name of favorite teacher?"
             )
             val adapter = ArrayAdapter(requireContext(), R.layout.list_security_questions_layout,items)
             (lQ1.editText as? AutoCompleteTextView)?.setAdapter(adapter)

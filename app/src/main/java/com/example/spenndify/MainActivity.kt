@@ -1,5 +1,7 @@
 package com.example.spenndify
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -7,12 +9,23 @@ import android.view.ViewTreeObserver
 import androidx.core.splashscreen.SplashScreen
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.fragment.NavHostFragment
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 import kotlin.concurrent.schedule
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     var contentHasLoaded = false
+    companion object {
+
+        fun newIntent(context: Context): Intent {
+
+            val intent = Intent(context, MainActivity::class.java)
+
+            return intent
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
 

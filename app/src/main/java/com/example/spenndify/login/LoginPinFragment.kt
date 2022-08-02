@@ -1,4 +1,4 @@
-package com.example.spenndify.createaccount
+package com.example.spenndify.login
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -10,15 +10,21 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.spenndify.R
 import com.example.spenndify.SharedPreferenceManager
+import com.example.spenndify.createaccount.CreatePinFragmentArgs
 import com.example.spenndify.databinding.CreatePinFragBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginPinFragment:Fragment() {
     private lateinit var binding: CreatePinFragBinding
     private  val args: CreatePinFragmentArgs by navArgs()
+
+    private val viewModel: LoginPinViewModel by viewModels()
 
     private var one1: String? = null
     private var two2: String? = null
@@ -34,7 +40,9 @@ class LoginPinFragment:Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = CreatePinFragBinding.inflate(inflater,container,false)
+        binding = CreatePinFragBinding.inflate(inflater,container,false).apply {
+            viewModel
+        }
         changeToConfirmPinLayout()
         confirmUI()
         return binding.root
