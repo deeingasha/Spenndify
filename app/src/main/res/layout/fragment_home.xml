@@ -206,7 +206,7 @@
             app:lottie_rawRes="@raw/lf31696_file_upload" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/import_btn"
             android:layout_width="228dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"

@@ -132,5 +132,15 @@
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.example.spenndify.dashboard.DashboardFragment"
-        android:label="DashboardFragment" />
+        android:label="DashboardFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_dashboardFragment_to_addTransactionFragment"
+            app:destination="@id/addTransactionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTransactionFragment"
+        android:name="com.example.spenndify.addtransaction.AddTransactionFragment"
+        android:label="AddTransactionFragment"
+        tools:layout="@layout/add_expense_layout"/>
 </navigation>

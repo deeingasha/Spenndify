@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.spenndify.R
 import com.example.spenndify.databinding.DashboardFragBinding
 
@@ -29,7 +30,7 @@ class DashboardFragment:Fragment() {
 
         setCurrentFragment(homeFragment)
 
-        binding.bottomNavView.setOnNavigationItemSelectedListener {
+        binding.bottomNavView.setOnItemSelectedListener{
 
             when(it.itemId){
                 R.id.nav_home->setCurrentFragment(homeFragment)
@@ -39,8 +40,16 @@ class DashboardFragment:Fragment() {
             }
             true
         }
+
+        binding.fab.setOnClickListener{
+            val action = DashboardFragmentDirections.actionDashboardFragmentToAddTransactionFragment()
+
+            findNavController().navigate(action)
+        }
         return binding.root
     }
+
+
     private fun setCurrentFragment(fragment:Fragment)=
         fragmentManager?.beginTransaction()?.apply {
             replace(R.id.dashFragment, fragment)

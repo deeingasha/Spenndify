@@ -13,17 +13,38 @@
 
         />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavView"
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:elevation="2dp"
-        android:layout_margin="16dp"
-        app:menu="@menu/menu_items"
-        android:background="@drawable/bottom_nav_rounded"
-        app:itemRippleColor="@android:color/transparent"
-        app:labelVisibilityMode="labeled"/>
-<!--   TODO     app:itemIconTint="@drawable/bottom_nav_selector"/>-->
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:fabCradleMargin="10dp"
+        app:fabCradleRoundedCornerRadius="10dp"
+        app:fabCradleVerticalOffset="10dp">
 
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:background="@drawable/bottom_nav_rounded"
+            android:elevation="4dp"
+            app:itemRippleColor="@android:color/transparent"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/menu_items" />
+        <!--   TODO     app:itemIconTint="@drawable/bottom_nav_selector"/>-->
+    </com.google.android.material.bottomappbar.BottomAppBar>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_add_24"
+        android:layout_margin="16dp"
+        app:layout_anchor="@id/bottomAppBar"
+        android:layout_gravity="center"
+        />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
