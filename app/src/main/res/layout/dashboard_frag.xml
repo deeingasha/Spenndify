@@ -18,21 +18,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         app:fabCradleMargin="10dp"
+        android:background="@drawable/get_started_btn"
         app:fabCradleRoundedCornerRadius="10dp"
         app:fabCradleVerticalOffset="10dp">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavView"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
-            android:layout_marginEnd="0dp"
+            android:layout_marginEnd="16dp"
             android:background="@drawable/bottom_nav_rounded"
-            android:elevation="4dp"
             app:itemRippleColor="@android:color/transparent"
             app:labelVisibilityMode="labeled"
             app:menu="@menu/menu_items" />

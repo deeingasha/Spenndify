@@ -5,119 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn_zero"
-        style="@style/keypad_buttons_style"
-        android:layout_width="104dp"
-        android:layout_height="58dp"
-        android:layout_marginBottom="88dp"
-        android:text="@string/_0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_nine"
-        style="@style/keypad_buttons_style"
-        android:layout_width="104dp"
-        android:layout_height="58dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/_9"
-        app:layout_constraintBottom_toTopOf="@+id/btn_delete"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/btn_eight"
-        style="@style/keypad_buttons_style"
-        android:layout_width="104dp"
-        android:layout_height="58dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/_8"
-        app:layout_constraintBottom_toTopOf="@+id/btn_zero"
-        app:layout_constraintEnd_toStartOf="@+id/btn_nine"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_seven" />
-
-    <Button
-        android:id="@+id/btn_seven"
-        style="@style/keypad_buttons_style"
-        android:layout_width="104dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="160dp"
-        android:text="@string/_7"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_six"
-        style="@style/keypad_buttons_style"
-        android:layout_width="104dp"
-        android:layout_height="58dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/_6"
-        app:layout_constraintBottom_toTopOf="@+id/btn_nine"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/btn_one"
-        style="@style/keypad_buttons_style"
-        android:layout_width="104dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/_1"
-        app:layout_constraintBottom_toTopOf="@+id/btn_four"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_two"
-        style="@style/keypad_buttons_style"
-        android:layout_width="104dp"
-        android:layout_height="58dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/_2"
-        app:layout_constraintBottom_toTopOf="@+id/btn_five"
-        app:layout_constraintEnd_toStartOf="@+id/btn_three"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_one" />
-
-    <Button
-        android:id="@+id/btn_four"
-        style="@style/keypad_buttons_style"
-        android:layout_width="104dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/_4"
-        app:layout_constraintBottom_toTopOf="@+id/btn_seven"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_three"
-        style="@style/keypad_buttons_style"
-        android:layout_width="104dp"
-        android:layout_height="58dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/_3"
-        app:layout_constraintBottom_toTopOf="@+id/btn_six"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <Button
-        android:id="@+id/btn_five"
-        style="@style/keypad_buttons_style"
-        android:layout_width="104dp"
-        android:layout_height="58dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/_5"
-        app:layout_constraintBottom_toTopOf="@+id/btn_eight"
-        app:layout_constraintEnd_toStartOf="@+id/btn_six"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toEndOf="@+id/btn_four" />
-
     <ImageButton
         android:id="@+id/pin_back_btn"
         android:layout_width="48dp"
@@ -129,19 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/layer_2" />
-
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="166dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="24dp"
-        android:contentDescription="@string/spenndify_blue_logo"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/spenndify_blue_logo" />
 
     <ImageView
         android:id="@+id/pin_profilePic"
@@ -167,18 +41,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pin_profilePic" />
-
-    <ImageButton
-        android:id="@+id/btn_delete"
-        style="@style/keypad_buttons_style"
-        android:layout_width="104dp"
-        android:layout_height="58dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="88dp"
-        android:background="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/group_189" />
 
     <TextView
         android:id="@+id/create_pin_txt"
@@ -232,6 +94,144 @@
             android:layout_height="match_parent"
             android:layout_weight="1" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_one"
+        style="@style/keypad_buttons_style"
+        android:layout_width="104dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/_1"
+        app:layout_constraintBottom_toTopOf="@+id/btn_four"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_two"
+        style="@style/keypad_buttons_style"
+        android:layout_width="104dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/_2"
+        app:layout_constraintBottom_toTopOf="@+id/btn_five"
+        app:layout_constraintEnd_toStartOf="@+id/btn_three"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_one" />
+
+    <Button
+        android:id="@+id/btn_three"
+        style="@style/keypad_buttons_style"
+        android:layout_width="104dp"
+        android:layout_height="58dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/_3"
+        app:layout_constraintBottom_toTopOf="@+id/btn_six"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btn_four"
+        style="@style/keypad_buttons_style"
+        android:layout_width="104dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/_4"
+        app:layout_constraintBottom_toTopOf="@+id/btn_seven"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_five"
+        style="@style/keypad_buttons_style"
+        android:layout_width="104dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/_5"
+        app:layout_constraintBottom_toTopOf="@+id/btn_eight"
+        app:layout_constraintEnd_toStartOf="@+id/btn_six"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toEndOf="@+id/btn_four" />
+
+    <Button
+        android:id="@+id/btn_six"
+        style="@style/keypad_buttons_style"
+        android:layout_width="104dp"
+        android:layout_height="58dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/_6"
+        app:layout_constraintBottom_toTopOf="@+id/btn_nine"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btn_seven"
+        style="@style/keypad_buttons_style"
+        android:layout_width="104dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="160dp"
+        android:text="@string/_7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_eight"
+        style="@style/keypad_buttons_style"
+        android:layout_width="104dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/_8"
+        app:layout_constraintBottom_toTopOf="@+id/btn_zero"
+        app:layout_constraintEnd_toStartOf="@+id/btn_nine"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_seven" />
+
+    <Button
+        android:id="@+id/btn_nine"
+        style="@style/keypad_buttons_style"
+        android:layout_width="104dp"
+        android:layout_height="58dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/_9"
+        app:layout_constraintBottom_toTopOf="@+id/btn_delete"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btn_zero"
+        style="@style/keypad_buttons_style"
+        android:layout_width="104dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="88dp"
+        android:text="@string/_0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btn_delete"
+        style="@style/keypad_buttons_style"
+        android:layout_width="104dp"
+        android:layout_height="58dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="88dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/group_189" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="166dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="@string/spenndify_blue_logo"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/spenndify_blue_logo" />
 
     <TextView
         android:id="@+id/forgotpin_btn"

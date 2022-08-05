@@ -1,20 +1,24 @@
 package com.example.spenndify.bottomsheets
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AutoCompleteTextView
 import androidx.navigation.fragment.findNavController
 import com.example.spenndify.R
-import com.example.spenndify.databinding.SmsPermissionLayoutBinding
+import com.example.spenndify.databinding.EnterAmountBsBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.google.android.material.textfield.TextInputLayout
 
-public class SmsPermission: BottomSheetDialogFragment() {
+class EnterAmount:BottomSheetDialogFragment() {
 
-    private lateinit var binding:SmsPermissionLayoutBinding
+    private lateinit var binding: EnterAmountBsBinding
+
 
     companion object {
-        const val TAG = "SmsBottomSheet"
+        const val TAG = "AmountBottomSheet"
     }
 
 
@@ -23,15 +27,21 @@ public class SmsPermission: BottomSheetDialogFragment() {
                               container: ViewGroup?,
                               savedInstanceState: Bundle?
     ): View? {
-        binding = SmsPermissionLayoutBinding.inflate(inflater, container, false)
+        binding = EnterAmountBsBinding.inflate(inflater,container,false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.permissionCancelBtn.setOnClickListener {
-            dismiss()
+        binding.apply {
+            cancelEaBtn.setOnClickListener {
+                dismiss()
+            }
+        }
+        binding.apply {
+            continueEaBtn.setOnClickListener{
+                val amount = amountInput.text.toString()
+            }
         }
     }
-
 }

@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.spenndify.data.local.UserDao
 import com.example.spenndify.databinding.LoginWelcomeBinding
+import com.example.spenndify.model.User
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -27,11 +29,12 @@ class LoginWelcomeFragment:Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
+
             //TODO change the username
             login2Btn.setOnClickListener{
                 val action = LoginWelcomeFragmentDirections.actionLoginWelcomeFragmentToLoginPinFragment()
                 findNavController().navigate(action)
             }
         }
-           }
+    }
 }

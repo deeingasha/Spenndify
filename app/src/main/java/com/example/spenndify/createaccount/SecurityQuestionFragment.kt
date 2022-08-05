@@ -38,33 +38,43 @@ class SecurityQuestionFragment:Fragment() {
         setUpQuestions()
         setUpAnswerEditText()
 
-        //TODO get Phone Number
-
         binding.continueSqBtn.setOnClickListener {
 
            if (validateForm()) {
 
-                hideErrorMessage()
+               hideErrorMessage()
+               popup.createVerifyPopup(context)
+
+               val action = SecurityQuestionFragmentDirections.actionSecurityQuestionFragmentToCreatePinFragment(
+                       args.fname,
+                       args.lname,
+                       args.idNo,
+                       args.emailAdd,
+                       args.phoneNo,
+                       binding.q1.text.toString(),
+                       binding.a1.text.toString(),
+
+                       binding.q2.text.toString(),
+                       binding.a2.text.toString(),
+
+                       binding.q3.text.toString(),
+                       binding.a3.text.toString(),
+                   )
+               findNavController().navigate(action)
+
                 Handler().postDelayed({
                         popup.dialog.dismiss()
                         popup.timeCountdown.cancel()
-
                     //TODO change back to actually verifying number before moving on
-                         val action = SecurityQuestionFragmentDirections.actionSecurityQuestionFragmentToCreatePinFragment(args.fname,args.lname,args.phoneNo)
-                         findNavController().navigate(action)
                     },6000)
 
-               popup.createVerifyPopup(context)
-//               val phoneNumber = args.phoneNo
-//               var phoneStart =phoneNumber?.subSequence(0,4)
-//               var phoneEnd = phoneNumber?.subSequence(7,9)
-//               popup.numberText.text = "We’ve sent a verification code to +254${phoneStart}***${phoneEnd}"
+
+               val phoneNumber = args.phoneNo
+               var phoneStart =phoneNumber?.subSequence(0,4)
+               var phoneEnd = phoneNumber?.subSequence(7,9)
+               popup.numberText.text = "We’ve sent a verification code to +254${phoneStart}***${phoneEnd}"
                popup.timeCountdown.start()
-                //TODO fix the phone number part
-           //TODO uncomment validation
             }
-            /**val action = SecurityQuestionFragmentDirections.actionSecurityQuestionFragmentToCreatePinFragment(args.fname,args.lname,args.phoneNo)
-            findNavController().navigate(action)*/
         }
         binding.backSqBtn.setOnClickListener {
                 findNavController().navigateUp()
@@ -95,6 +105,7 @@ class SecurityQuestionFragment:Fragment() {
             binding.textInputLayouta2.visibility = View.VISIBLE
         }else if (!binding.textInputLayouta3.isVisible){
             binding.textInputLayouta3.visibility = View.VISIBLE
+            binding.a3.requestFocus()
         }
     }
 

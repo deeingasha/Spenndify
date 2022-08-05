@@ -4,10 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.spenndify.R
+import com.example.spenndify.bottomsheets.EnterAmount
+import com.example.spenndify.bottomsheets.EnterAmount.Companion.TAG
+import com.example.spenndify.bottomsheets.SmsPermission
 import com.example.spenndify.databinding.AddExpenseLayoutBinding
 import com.example.spenndify.databinding.DashboardFragBinding
 import com.example.spenndify.onboarding.OnboardingItemAdapter
@@ -48,28 +52,16 @@ class AddTransactionFragment:Fragment() {
             tab.text = tabNameArray[position]
          }.attach()
 
+
         binding.backAtBtn.setOnClickListener {
             findNavController().navigateUp()
         }
+
     }
 
     private fun setTransactionLayoutItems() {
 
-        transactionLayoutAdapter = TransactionLayoutAdapter(
-            listOf(
-                TransactionItemsModel(
-                    transactionText = "Add your Income transaction",
-                    setCycleView = View.GONE,
-                ),
-                TransactionItemsModel(
-                    transactionText = "Add your Expense transaction",
-                    setCycleView = View.GONE,
-                ),
-                TransactionItemsModel(
-                    transactionText = "Create your Budget",
-                    setCycleView = View.VISIBLE,
-                )
-            )
-        )
+        transactionLayoutAdapter = TransactionLayoutAdapter(childFragmentManager, lifecycle)
+
     }
 }

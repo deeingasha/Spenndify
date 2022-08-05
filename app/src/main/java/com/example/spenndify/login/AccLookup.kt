@@ -6,14 +6,25 @@ import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.compose.runtime.snapshots.Snapshot.Companion.observe
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.spenndify.VerifyPopup
+import com.example.spenndify.createaccount.CreatePinFragmentDirections
 import com.example.spenndify.createaccount.SecurityQuestionFragmentDirections
+import com.example.spenndify.data.remote.model.OtpRequest
+import com.example.spenndify.data.remote.model.response.OTP
 import com.example.spenndify.databinding.AccLookupBinding
+import com.example.spenndify.utils.Status
+import com.example.spenndify.utils.showToast
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AccLookup: Fragment() {
     private lateinit var binding: AccLookupBinding
+    private val viewModel:AccLookupViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,21 +42,27 @@ class AccLookup: Fragment() {
 
         binding.lookupContinueBtn.setOnClickListener {
 
+
             if (validateForm()) {
+                val phoneNum = binding.phoneNo.text.toString()
+
+                val otpRequest = OtpRequest(
+                    phoneNumber = "+254$phoneNum"
+                )
+                requestOTP(otpRequest)
                 val popup = VerifyPopup
+                val action = AccLookupDirections.actionAccLookupToLoginWelcomeFragment()
+                findNavController().navigate(action)
                 Handler().postDelayed({
                     popup.dialog.dismiss()
                     popup.timeCountdown.cancel()
 
-                    //TODO change back to actually verifying number before moving on
-                    val action = AccLookupDirections.actionAccLookupToLoginWelcomeFragment()
-                    findNavController().navigate(action)
                 },6000)
 
                 popup.createVerifyPopup(context)
-                val phoneNumber = binding.phoneNo.text.toString()
-                var phoneStart = phoneNumber?.subSequence(0, 4)
-                var phoneEnd = phoneNumber?.subSequence(7, 9)
+3
+                var phoneStart = phoneNum?.subSequence(0, 4)
+                var phoneEnd = phoneNum?.subSequence(7, 9)
                 popup.numberText.text =
                     "We’ve sent a verification code to +254${phoneStart}***${phoneEnd}" //TODO figure out sth better
                 popup.timeCountdown.start()
@@ -80,4 +97,47 @@ class AccLookup: Fragment() {
         }
     }
 
+    fun  requestOTP(otpRequest: OtpRequest){
+        viewModel.requestOTP(otpRequest).observe(viewLifecycleOwner){
+            binding.apply {
+                it.let { resource ->
+                    when(resource.status){
+                        Status.SUCCESS -> {
+                            Toast.makeText(context, "works!!", Toast.LENGTH_SHORT).show()
+
+                        }
+
+                        Status.ERROR -> {
+                            showToast(resource.message.toString())
+                        }
+                        Status.LOADING ->{
+                            Toast.makeText(context, "Loading", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
+            }
+        }
+    }
+    //TODO set up broadcast receiver and read otp
+    fun  verifyOTP(otp: OTP){
+        viewModel.sendOTP(otp).observe(viewLifecycleOwner){
+            binding.apply {
+                it.let { resource ->
+                    when(resource.status){
+                        Status.SUCCESS -> {
+                            Toast.makeText(context, "works!!", Toast.LENGTH_SHORT).show()
+
+                        }
+
+                        Status.ERROR -> {
+                            showToast(resource.message.toString())
+                        }
+                        Status.LOADING ->{
+                            Toast.makeText(context, "Loading", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

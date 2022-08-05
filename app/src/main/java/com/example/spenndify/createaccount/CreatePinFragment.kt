@@ -10,16 +10,23 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.spenndify.R
 import com.example.spenndify.SharedPreferenceManager
 import com.example.spenndify.databinding.CreatePinFragBinding
+import com.example.spenndify.model.User
+import com.example.spenndify.utils.Status
+import com.example.spenndify.utils.showToast
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CreatePinFragment:Fragment() {
   private lateinit var binding: CreatePinFragBinding
-  private  val args: CreatePinFragmentArgs by navArgs()
+    private val viewModel:CreateAccountViewModel by viewModels()
 
+  private  val args: CreatePinFragmentArgs by navArgs()
 
     private var pin = ""
 
@@ -37,7 +44,9 @@ class CreatePinFragment:Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = CreatePinFragBinding.inflate(inflater,container,false)
+        binding = CreatePinFragBinding.inflate(inflater,container,false).apply {
+            viewModel
+        }
         initUI()
         return binding.root
     }
@@ -138,15 +147,36 @@ class CreatePinFragment:Fragment() {
         val shared = context?.getSharedPreferences("PinSharedPref",Context.MODE_PRIVATE)
         val  initialPin = shared?.getString("initial_pin","")
 
+        val firstName= args.fname.toString()
+        val lastName = args.lname.toString()
+        val idNum = args.idNo.toString()
+        val emailAdd = args.emailAdd.toString()
+        val phoneNumber = args.phoneNo.toString()
+        val a1 =args.a1.toString()
+        val a2 =args.a2.toString()
+        val a3 =args.a3.toString()
+        val password = confirmPin.toString()
+
+
+        val user = User(
+            firstName = firstName,
+            lastName = lastName,
+            idNumber = idNum,
+            email = emailAdd,
+            phone = "+254${phoneNumber}", //TODO work on it
+            questionOne = a1,
+            questionTwo = a2,
+            questionThree = a3,
+            password = password
+        )
+
         if (initialPin == confirmPin){
-            binding.createPinTxt.text = "Match!!"
-            val action = CreatePinFragmentDirections.actionCreatePinFragmentToLoginWelcomeFragment()
-            findNavController().navigate(action)
-            //TODO navigate to welcome page
+          saveUserDetails(user)
         }else{
-            binding.createPinTxt.text = "No Match!!"
+            binding.createPinTxt.text = "no match!!"
         }
     }
+
 
     @SuppressLint("UseCompatLoadingForDrawables")
     private fun deletePinEntry() {
@@ -271,4 +301,28 @@ private fun controlPinPad1(entry: String) {
     }
 }
 
-}
+    private fun saveUserDetails(user: User){
+        viewModel.saveUserDetails(user).observe(viewLifecycleOwner){
+            binding.apply {
+                it.let { resource ->
+                    when(resource.status){
+                        Status.SUCCESS -> {
+                            Toast.makeText(context, "works!!", Toast.LENGTH_SHORT).show()
+
+                            val action = CreatePinFragmentDirections.actionCreatePinFragmentToLoginWelcomeFragment(args.fname,args.lname)
+                            findNavController().navigate(action)
+                        }
+
+                        Status.ERROR -> {
+                            showToast(resource.message.toString())
+                        }
+                        Status.LOADING ->{
+                            Toast.makeText(context, "Loading", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}//TODO improve error messages and Api call

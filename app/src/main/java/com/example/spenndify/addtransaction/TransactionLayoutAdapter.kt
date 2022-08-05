@@ -3,44 +3,31 @@ package com.example.spenndify.addtransaction
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.Lifecycle
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.spenndify.databinding.OnboardingLayoutBinding
 import com.example.spenndify.databinding.TransactionOptionsLayoutBinding
 import com.example.spenndify.onboarding.OnboardingItemAdapter
 import com.example.spenndify.onboarding.OnboardingItemModel
 
-class TransactionLayoutAdapter (
-    private val TransactionItems: List<TransactionItemsModel>
-): RecyclerView.Adapter<TransactionLayoutAdapter.TransactionViewHolder>(){
+private const val NUM_TABS = 3
 
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): TransactionViewHolder {
-        val inflater = LayoutInflater.from(parent.context)
-        val binding = TransactionOptionsLayoutBinding.inflate(inflater, parent,false)
-
-        return TransactionViewHolder(binding)
-    }
-
-    override fun onBindViewHolder(
-        holder: TransactionViewHolder,
-        position: Int
-    ) {
-        holder.bind(TransactionItems[position])
-    }
+class TransactionLayoutAdapter (fragmentManager: FragmentManager, lifecycle: Lifecycle) :
+    FragmentStateAdapter(fragmentManager, lifecycle){
 
     override fun getItemCount(): Int {
-        return TransactionItems.size
+        return NUM_TABS
     }
 
-    inner class TransactionViewHolder(private val binding: TransactionOptionsLayoutBinding
-    ): RecyclerView.ViewHolder(binding.root){
-        fun  bind(TransactionItems: TransactionItemsModel){
-
-            binding.transactionOptText.text = TransactionItems.transactionText
-            binding.setCycleOption.visibility = TransactionItems.setCycleView
-
+    override fun createFragment(position: Int): Fragment {
+        when (position) {
+            0 -> return AddIncomeTransaction()
+            1 -> return AddExpenseTransaction()
         }
+        return AddBudget()
     }
 }
+

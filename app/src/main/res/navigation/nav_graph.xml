@@ -49,6 +49,16 @@
             app:nullable="true"
             android:defaultValue="@null" />
         <argument
+            android:name="idNo"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="emailAdd"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
             android:name="phoneNo"
             app:argType="string"
             app:nullable="true"
@@ -86,10 +96,51 @@
             app:nullable="true"
             android:defaultValue="@null" />
         <argument
+            android:name="idNo"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="emailAdd"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
             android:name="phoneNo"
             app:argType="string"
             app:nullable="true"
             android:defaultValue="@null"/>
+        <argument
+            android:name="q1"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="a1"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="q2"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="a2"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="q3"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="a3"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+
     </fragment>
     <fragment
         android:id="@+id/loginWelcomeFragment"
@@ -99,6 +150,16 @@
         <action
             android:id="@+id/action_loginWelcomeFragment_to_loginPinFragment"
             app:destination="@id/loginPinFragment" />
+        <argument
+            android:name="fname"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
+        <argument
+            android:name="lname"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"/>
     </fragment>
     <fragment
         android:id="@+id/loginPinFragment"

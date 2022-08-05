@@ -1,5 +1,6 @@
 package com.example.spenndify.data.remote
 
+import com.example.spenndify.data.remote.model.OtpRequest
 import com.example.spenndify.data.remote.model.Security
 import com.example.spenndify.data.remote.model.SecurityAnswer
 import com.example.spenndify.data.remote.model.response.LoginResponse
@@ -17,17 +18,11 @@ interface ApiService {
     suspend fun postUserDetails(
         @Body user: User
     ): UserResponse
-//
-//    @GET("api/securityQuestions")
-//    suspend fun getSecurityQuestions(): List<Security>
-//
-//    @POST("api/securityAnswers")
-//    suspend fun postSecurityAnswers(
-//        @Body securityAnswer: SecurityAnswer
-//    ): UserResponse
 
-    @GET("spendy/user/send/otp")
-    suspend fun getOTP() : OTP
+    @POST("spendy/user/send/otp")
+    suspend fun getOTP(
+        @Body otpRequest: OtpRequest
+    ):UserResponse
 
     @POST("verify/registration/otp")
     suspend fun confirmOTP(

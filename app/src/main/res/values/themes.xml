@@ -3,7 +3,7 @@
     <style name="Theme.Spenndify" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/unnamed_color_03045e</item>
-        <item name="colorPrimaryVariant">@color/unnamed_color_F7F7F7</item>
+        <item name="colorPrimaryVariant">@color/unnamed_color_03045e</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/unnamed_color_03045e</item>
@@ -41,5 +41,12 @@
     <style name="rounded_toggle">
         <item name="cornerRadius">30dp</item>
     </style>
+
+    <style name="AppBottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="cornerRadius">30dp</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
 
 </resources>
